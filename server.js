@@ -1,15 +1,33 @@
-var WebSocketServer = require('ws').Server
-, wss = new WebSocketServer({port: 3333})
-, fs = require('fs')
-, os = require('os')
-var dataFile = os.homedir() + '/.crouton-clipboard/data.txt'
+var PORT = 3396
+isPortTaken(PORT, startServer)
 
-wss.on('connection', ws => {
-  ws.on('message', msg => {
-    fs.writeFile(dataFile, msg)
+function startServer() {
+  var WebSocketServer = require('ws').Server
+  , wss = new WebSocketServer({port: PORT})
+  , fs = require('fs')
+  , os = require('os')
+  var dataFile = os.homedir() + '/.crouton-clipboard/data.txt'
+  wss.on('connection', ws => {
+    ws.on('message', msg => {
+      fs.writeFile(dataFile, msg)
+    })
+    fs.watchFile(dataFile, () => {
+      ws.send(fs.readFileSync(dataFile))
+    })
+    ws.on('close', ()=> fs.unwatchFile(dataFile))
   })
-  fs.watchFile(dataFile, () => {
-    ws.send(fs.readFileSync(dataFile))
+}
+
+function isPortTaken (port, fn) {
+  var net = require('net')
+  var tester = net.createServer()
+  .once('error', function (err) {
+    if (err.code != 'EADDRINUSE') return fn(err)
+    fn(null, true)
   })
-  ws.on('close', ()=> fs.unwatchFile(dataFile))
-})
+  .once('listening', function() {
+    tester.once('close', function() { fn(null, false) })
+    .close()
+  })
+  .listen(port)
+}
