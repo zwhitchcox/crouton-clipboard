@@ -1,6 +1,7 @@
 chrome.runtime.onMessage.addListener(onMsg)
+var PORT = 3396
 
-var ws = new WebSocket('ws://localhost:3333')
+var ws = new WebSocket('ws://localhost:' + PORT)
 createListener(ws)
 var timeout;
 
@@ -12,7 +13,7 @@ function onMsg(msg) {
     } 
     if (~[2,3].indexOf(ws.readyState)) {
       timeout = setTimeout(() => {
-        ws = new WebSocket('ws://localhost:3333')
+        ws = new WebSocket('ws://localhost:' + PORT)
         createListener(ws)
         ws.onopen = () => {
           ws.send(msg.data)

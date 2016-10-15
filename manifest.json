@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 2.1,
   "name": "Crouton Clipboard",
   "description": "Link between crouton clipboard and Chrome OS",
   "version": "1.0",

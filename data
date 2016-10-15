@@ -1,1 +1,0 @@
-echo "nnoremap \"*p :r !cat $HOME/.crouton-clipboard/data<CR>\nvnoremap \"*y :'<,'>w! $HOME/.crouton-clipboard/data<CR>" >> ~/.vimrc
