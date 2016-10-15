@@ -1,7 +1,8 @@
 var PORT = 3396
 isPortTaken(PORT, startServer)
 
-function startServer() {
+function startServer(err) {
+  if (err) return
   var WebSocketServer = require('ws').Server
   , wss = new WebSocketServer({port: PORT})
   , fs = require('fs')
