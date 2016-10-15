@@ -1,1 +1,1 @@
-var ws = new WebSocket('ws://localhost:3333')
+Clipboard integration between Chrome OS and Crouton — Edit
