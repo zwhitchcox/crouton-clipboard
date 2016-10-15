@@ -1,1 +1,2 @@
-Clipboard integration between Chrome OS and Crouton — Edit
+Almost! Actually, the script has already exited by the time you press Enter. However, that's how you can get your prompt back (because your shell prints its $PS1 all over again).
+
