@@ -2,7 +2,7 @@ var WebSocketServer = require('ws').Server
 , wss = new WebSocketServer({port: 3333})
 , fs = require('fs')
 , os = require('os')
-var dataFile = os.homedir() + '/.crouton-clipboard/data'
+var dataFile = os.homedir() + '/.crouton-clipboard/data.txt'
 
 wss.on('connection', ws => {
   ws.on('message', msg => {

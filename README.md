@@ -9,7 +9,7 @@
 
 Crouton clipboard integrates the Chrome OS clipboard with the [crouton](https://github.com/dnschneid/crouton) linux instance clipboard without running the display (so, only when you use the CLI).
 
-Whenever you copy something on Chrome OS, it is automatically written to ~/.crouton-clipboard/data, and whenever you write to ~/.crouton-clipboard/data, it is automatically copied to your clipboard on Chrome OS.
+Whenever you copy something on Chrome OS, it is automatically written to ~/.crouton-clipboard/data.txt, and whenever you write to ~/.crouton-clipboard/data.txt, it is automatically copied to your clipboard on Chrome OS.
 
 ### Installation
 
@@ -27,8 +27,8 @@ Next, you need to install the [Crouton Clipboard Extension&reg;](https://chrome.
 I created this for vim, so I didn't have to copy and paste using the chrome interface, so to install for vim, all you have to do is add the following to your `vimrc`
 
 ```vim
-nnoremap "*p :r !cat $HOME/.crouton-clipboard/data<CR>
-vnoremap "*y :'<,'>w! $HOME/.crouton-clipboard/data<CR>
+nnoremap "*p :r !cat $HOME/.crouton-clipboard/data.txt<CR>
+vnoremap "*y :'<,'>w! $HOME/.crouton-clipboard/data.txt<CR>
 ```
 
 Note: This is automatically done by `install.sh`
