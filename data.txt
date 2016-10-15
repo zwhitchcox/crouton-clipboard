@@ -1,1 +1,1 @@
-git@github.com:zwhitchcox/crouton-clipboard.git
+git clone http://github.com/zwhitchcox/crouton-clipboard ~/.crouton-clipboard
