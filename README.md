@@ -9,7 +9,7 @@
 
 Crouton clipboard integrates the Chrome OS clipboard with the [crouton](https://github.com/dnschneid/crouton) linux instance clipboard without running the display (so, only when you use the CLI).
 
-Whenever you copy something on Chrome OS, it is automatically written to ~/.crouton-clipboard/data.txt, and whenever you write to ~/.crouton-clipboard/data.txt, it is automatically copied to your clipboard on Chrome OS.
+Whenever you copy something on Chrome OS, it is automatically written to `~/.crouton-clipboard/data.txt`, and whenever you write to `~/.crouton-clipboard/data.txt`, it is automatically copied to your clipboard on Chrome OS.
 
 ### Installation
 
