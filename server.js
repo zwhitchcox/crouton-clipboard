@@ -2,7 +2,7 @@ var PORT = 3396
 startServer()
 
 function startServer(err) {
-  if (err != null) return
+  if (err !== null) return
   var WebSocketServer = require('ws').Server
   , wss = new WebSocketServer({port: PORT})
   , fs = require('fs')
