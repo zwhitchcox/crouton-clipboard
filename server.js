@@ -1,5 +1,5 @@
 var PORT = 3396
-startServer()
+isPortTaken(PORT, startServer)
 
 function startServer(err) {
   if (err != null) return
@@ -23,6 +23,7 @@ function isPortTaken (port, fn) {
   var net = require('net')
   var tester = net.createServer()
   .once('error', function (err) {
+    console.log('errrr')
     if (err.code != 'EADDRINUSE') return fn(err)
   })
   .once('listening', function() {
