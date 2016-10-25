@@ -1,8 +1,7 @@
 var PORT = 3396
 isPortTaken(PORT, startServer)
 
-function startServer(err) {
-  if (err != null) return
+function startServer() {
   var WebSocketServer = require('ws').Server
   , wss = new WebSocketServer({port: PORT})
   , fs = require('fs')
@@ -23,8 +22,8 @@ function isPortTaken (port, fn) {
   var net = require('net')
   var tester = net.createServer()
   .once('error', function (err) {
-    console.log('errrr')
-    if (err.code != 'EADDRINUSE') return fn(err)
+    if (err.code != 'EADDRINUSE') return fn()
+    process.exit(0)
   })
   .once('listening', function() {
     tester.once('close', function() { fn(null, false) })
