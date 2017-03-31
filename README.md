@@ -15,7 +15,7 @@ Whenever you copy something on Chrome OS, it is automatically written to `~/.cro
 
 First you want to clone [Crouton Clipboard&reg;](https://github.com/zwhitchcox/crouton-clipboard) and add `node ~/.crouton-clipboard/server` to your `.bashrc`. You can do this manually, or just type
 
-`curl -sL https://cdn.rawgit.com/zwhitchcox/crouton-clipboard/c6a72e00/install.sh | sh`
+`curl -sL https://cdn.rawgit.com/zwhitchcox/crouton-clipboard/ed2b0303/install.sh | sh`
 
 into your console, and this will be done automagically.
 
