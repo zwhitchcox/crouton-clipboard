@@ -9,7 +9,7 @@ function startServer() {
   var dataFile = os.homedir() + '/.crouton-clipboard/data.txt'
   wss.on('connection', ws => {
     ws.on('message', msg => {
-      fs.writeFile(dataFile, msg)
+      fs.writeFile(dataFile, msg, () => {})
     })
     fs.watchFile(dataFile, () => {
       ws.send(fs.readFileSync(dataFile))
