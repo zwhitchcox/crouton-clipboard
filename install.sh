@@ -1,5 +1,6 @@
 echo "cloning crouton clipboard!"
 git clone http://github.com/zwhitchcox/crouton-clipboard ~/.crouton-clipboard
+touch ~/.crouton-clipboard/data.txt
 echo "adding startup script to .bashrc"
 echo "(nohup node ~/.crouton-clipboard/server.js > /dev/null 2>&1 &)                                                                          " >> $HOME/.bashrc
 echo "adding copy/paste commands to vimrc"
